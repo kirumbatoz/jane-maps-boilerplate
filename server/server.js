@@ -1,12 +1,10 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import 'babel-polyfill';
 import SourceMapSupport from 'source-map-support';
 SourceMapSupport.install()
 
 const app = express();
 app.use(express.static('static'));
-app.use(bodyParser.json());
 
 if (process.env.NODE_ENV !== 'production') {
   const webpack = require('webpack');
